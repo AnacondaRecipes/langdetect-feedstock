@@ -8,7 +8,7 @@ package:
 source:
   # standard pypi url for 1.0.7 is missing
   url: https://files.pythonhosted.org/packages/59/59/4bc44158a767a6d66de18c4136c8aa90491d56cc951c10b74dd1e13213c9/langdetect-1.0.7.zip
-  sha256: cbc1fef89f8d062739774bd51eda3da3274006b3661d199c2655f6b3f6d605a0
+  sha256: 91a170d5f0ade380db809b3ba67f08e95fe6c6c8641f96d67a51ff7e98a9bf30
 
 build:
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
