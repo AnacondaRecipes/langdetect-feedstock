@@ -1,5 +1,5 @@
 {% set name = "langdetect" %}
-{% set version = "1.0.9" %}
+{% set version = "1.0.7" %}
 
 package:
   name: {{ name|lower }}
