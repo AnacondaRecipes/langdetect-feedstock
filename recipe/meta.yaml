@@ -10,16 +10,14 @@ source:
   sha256: cbc1fef89f8d062739774bd51eda3da3274006b3661d199c2655f6b3f6d605a0
 
 build:
-  number: 0
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
   host:
-    - python >=3.6
+    - python
     - pip
   run:
-    - python >=3.6
+    - python
     - six
 
 test:
@@ -33,10 +31,11 @@ test:
 
 about:
   home: https://github.com/Mimino666/langdetect
-  license_file: LICENSE
+  summary: Language detection library ported from Google's language-detection.
+  description: Port of Nakatani Shuyo's language-detection library (version from 03/03/2014) to Python.
   license: Apache-2.0
   license_family: Apache
-  summary: Language detection library ported from Google's language-detection.
+  license_file: LICENSE
   doc_url: https://github.com/Mimino666/langdetect
   dev_url: https://github.com/Mimino666/langdetect
 
