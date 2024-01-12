@@ -1,25 +1,27 @@
 {% set name = "langdetect" %}
-{% set version = "1.0.9" %}
+{% set version = "1.0.7" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: cbc1fef89f8d062739774bd51eda3da3274006b3661d199c2655f6b3f6d605a0
+  # standard pypi url for 1.0.7 is missing
+  url: https://pypi.io/packages/source/l/langdetect/langdetect-1.0.7.zip
+  sha256: 91a170d5f0ade380db809b3ba67f08e95fe6c6c8641f96d67a51ff7e98a9bf30
 
 build:
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
   number: 0
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.6
+    - python
     - pip
+    - setuptools
+    - wheel
   run:
-    - python >=3.6
+    - python
     - six
 
 test:
@@ -33,10 +35,11 @@ test:
 
 about:
   home: https://github.com/Mimino666/langdetect
-  license_file: LICENSE
+  summary: Language detection library ported from Google's language-detection.
+  description: Port of Nakatani Shuyo's language-detection library (version from 03/03/2014) to Python.
   license: Apache-2.0
   license_family: Apache
-  summary: Language detection library ported from Google's language-detection.
+  license_file: LICENSE
   doc_url: https://github.com/Mimino666/langdetect
   dev_url: https://github.com/Mimino666/langdetect
 
